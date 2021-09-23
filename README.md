@@ -1,4 +1,4 @@
-# JS Unit Testing Statements
+# JS Unit Testing Objects
 
 This project is written in [Node](https://nodejs.org/en/), and tested with [Jest - the delightful JavaScript Testing Framework](https://jestjs.io/).
 
