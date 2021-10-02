@@ -1,4 +1,4 @@
-const getColorValue = require('../src/objects-02');
+const { getColorValue, testForColor } = require('../src/objects-02');
 
 test('getColorValue', () => {
   expect(getColorValue('red')).toBe('#ff0000');
@@ -26,4 +26,38 @@ test('getColorValue', () => {
   expect(getColorValue('aqua')).toBe('#00ffff');
   expect(getColorValue('lavender')).toBe('#e6e6fa');
   expect(getColorValue('turquoise')).toBe('#40e0d0');
+});
+
+test('testForColor', () => {
+  expect(testForColor('red')).toBe(true);
+  expect(testForColor('green')).toBe(true);
+  expect(testForColor('blue')).toBe(true);
+  expect(testForColor('yellow')).toBe(true);
+  expect(testForColor('magenta')).toBe(true);
+  expect(testForColor('cyan')).toBe(true);
+  expect(testForColor('black')).toBe(true);
+  expect(testForColor('white')).toBe(true);
+  expect(testForColor('purple')).toBe(true);
+  expect(testForColor('orange')).toBe(true);
+  expect(testForColor('brown')).toBe(true);
+  expect(testForColor('gray')).toBe(true);
+  expect(testForColor('pink')).toBe(true);
+  expect(testForColor('beige')).toBe(true);
+  expect(testForColor('olive')).toBe(true);
+  expect(testForColor('maroon')).toBe(true);
+  expect(testForColor('teal')).toBe(true);
+  expect(testForColor('indigo')).toBe(true);
+  expect(testForColor('navy')).toBe(true);
+  expect(testForColor('violet')).toBe(true);
+  expect(testForColor('tan')).toBe(true);
+  expect(testForColor('silver')).toBe(true);
+  expect(testForColor('aqua')).toBe(true);
+  expect(testForColor('lavender')).toBe(true);
+  expect(testForColor('turquoise')).toBe(true);
+  expect(testForColor('beige')).toBe(true);
+  expect(testForColor('olive')).toBe(true);
+  expect(testForColor('maroon')).toBe(true);
+  expect(testForColor('teal')).toBe(true);
+  expect(testForColor('indigo')).toBe(true);
+  expect(testForColor('azure')).toBe(false);
 });

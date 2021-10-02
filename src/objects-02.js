@@ -79,6 +79,27 @@ function getColorValue(color) {
   // write your code here & return value
 }
 
+/**
+ * Returns boolean if the given color is in the color table
+ * @param {string} color - color name to see if it is in the color table
+ * @returns {boolean} - true if the color is in the color table,
+ * false otherwise
+ *
+ * example: testForColor('red') => true
+ * example: testForColor('pink') => true
+ * example: testForColor('chartreuse') => faLse // not in the table
+ *
+ * must use colorHexCodes as a lookup table
+ * must use hasOwnProperty() to check if the color is in the table
+ *
+ * book - https://bit.ly/3D5ojn5
+ * Mozilla - https://mzl.la/3F6tk0F
+ */
+function testForColor(color) {
+  // write your code here & return value
+}
+
 module.exports = {
   getColorValue,
+  testForColor,
 };
