@@ -22,13 +22,13 @@ Fixing the code will make the tests pass and show in green in the console.
 
 ## Run tests on a single file
 
-`npm test -- stmnts-01.test.js`
+`npm test -- objects-01.test.js`
 
 NOTE: The -- tells npm to pass along whatever following arguments there are to the program it is running.
 
 The above npm command is equivalent to:
 
-`npx jest --coverage --verbose stmnts-01.test.js `
+`npx jest --coverage --verbose objects-01.test.js `
 
 Since we have a number of files that need individual editing, we want to run individual testing sequentially on each one of them as well.
 
@@ -36,7 +36,7 @@ Since we have a number of files that need individual editing, we want to run ind
 
 By default, jest looks for files that end in .test.js and will search folders to find those files. Your JavaScript files are in a folder call tests.
 
-So the above example tests the first file `tests/stmnts-01.test.js` and outputs the results to the console.
+So the above example tests the first file `tests/objects-01.test.js` and outputs the results to the console.
 
 If a test fails, jest will identify it as failing and print one or more error messages, depending on the test expectations.
 
@@ -46,7 +46,7 @@ If a test fails, jest will identify it as failing and print one or more error me
 
 One-by-one, edit each JavaScript file and follow the instructions for each function listed. When one file completely passes its tests, you are ready for the next file.
 
-Start with stmnts-01.test.js and finish with stmnts-07.test.js
+Start with objects-01.test.js and finish with objects-07.test.js
 
 ---
 
@@ -74,7 +74,6 @@ You should output that includes a table at the end looking like this:
 
 <img width="683" alt="test-coverage-100%" src="https://user-images.githubusercontent.com/13385801/134093507-474fffdf-d6ea-4d13-aaa6-f4a8d5efa534.png">
 
-
 ---
 
 ## Coverage
@@ -83,26 +82,21 @@ The Live Server extension is configured (in .vscode/settings.json) to open the t
 
 Jest uses [Istanbul](https://istanbul.js.org/) to track how well the unit tests test the code. The output from Istanbul looks like this:
 
-
 ![127 0 0 1_5500_](https://user-images.githubusercontent.com/13385801/134093898-82d5d96b-5416-4225-be7c-7c0fca5c8f9d.png)
 
 And a code file output looks like:
 
-![127 0 0 1_5500_stmnts-01 js html](https://user-images.githubusercontent.com/13385801/134094889-628d1f0e-8229-4455-9ae6-315a12f2a85e.png)
-
+![127 0 0 1_5500_objects-01 js html](https://user-images.githubusercontent.com/13385801/134094889-628d1f0e-8229-4455-9ae6-315a12f2a85e.png)
 
 If certain pieces of code are not touched by the unit tests, the Istanbul output will flag the code as not covered.
 
-
 <img width="455" alt="2021-09-20_20-37-53" src="https://user-images.githubusercontent.com/13385801/134095415-2fea0797-6388-412c-94b6-fafdbc335135.png">
-
 
 The question then becomes: Is the code logic wrong or is the suite of tests not inclusive enough?
 
 In the above silly example, the code logic is wrong. There is probably no need for that if statement. If there is a need, then a test should be written for it.
 
 ---
-
 
 ## Commit and push after all tests pass
 
