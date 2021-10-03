@@ -68,7 +68,7 @@ function getPetAge(pet) {
  * permanently making a change to the passed object.
  */
 function setPetAge(pet, age) {
-  // write your code here
+  // write your code here & return value
 }
 
 /**
@@ -88,7 +88,7 @@ function isPetABaby(pet) {
  * breed must be the property name that is added
  */
 function addPetBreed(pet, str) {
-  // write your code here
+  // write your code here & return value
 }
 
 /**
@@ -99,7 +99,7 @@ function addPetBreed(pet, str) {
  * Mozilla - https://mzl.la/3FmDpqv
  */
 function deletePetBestFriend(pet) {
-  // write your code here
+  // write your code here & return value
 }
 
 /**
