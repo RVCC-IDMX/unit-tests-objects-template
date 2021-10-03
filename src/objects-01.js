@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable dot-notation */
 /*
  * objects-01.js
  * Language: javascript
@@ -35,7 +37,7 @@ function makePetObject() {
  * book - https://bit.ly/3osgWCb
  * Mozilla - https://mzl.la/3iu0uh4
  */
-function getNameFromPet(pet) {
+function getPetName(pet) {
   // write your code here & return value
 }
 
@@ -47,7 +49,8 @@ function getNameFromPet(pet) {
  * book - https://bit.ly/2YnZJ1Y
  * Mozilla - https://mzl.la/39ZgjHP
  */
-function getAgeFromPet(pet) {
+function getPetAge(pet) {
+  // eslint-disable-next-line dot-notation
   // write your code here & return value
 }
 
@@ -81,6 +84,7 @@ function isPetABaby(pet) {
  * Adds a new property to the pet object.
  * @param {object} pet - the  pet object as defined in makePetObject()
  * @param {string} str- a string indicating the breed of the pet
+ * @returns {object} - the same pet object but with a new property
  * breed must be the property name that is added
  */
 function addPetBreed(pet, str) {
@@ -121,8 +125,8 @@ function getPetObjLength(pet) {
 
 module.exports = {
   makePetObject,
-  getNameFromPet,
-  getAgeFromPet,
+  getPetName,
+  getPetAge,
   setPetAge,
   isPetABaby,
   addPetBreed,
