@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /*
  * objects-02.js
  * Language: javascript
@@ -47,27 +48,32 @@
 
 // eslint-disable-next-line no-unused-vars
 const colorHexCodes = {
-  red: '#FF0000',
-  green: '#00FF00',
-  blue: '#0000FF',
-  yellow: '#FFFF00',
-  orange: '#FFA500',
+  red: '#ff0000',
+  green: '#00ff00',
+  blue: '#0000ff',
+  yellow: '#ffff00',
+  orange: '#ffa500',
   purple: '#800080',
   black: '#000000',
-  white: '#FFFFFF',
-  brown: '#A52A2A',
+  white: '#ffffff',
+  brown: '#a52a2a',
   gray: '#808080',
-  pink: '#FFC0CB',
-  cyan: '#00FFFF',
-  magenta: '#FF00FF',
-  lime: '#00FF00',
+  pink: '#ffc0cb',
+  cyan: '#00ffff',
+  magenta: '#ff00ff',
+  lime: '#00ff00',
   maroon: '#800000',
   navy: '#000080',
   olive: '#808000',
-  silver: '#C0C0C0',
+  silver: '#c0c0c0',
   teal: '#008080',
-  violet: '#EE82EE',
-  turquoise: '#40E0D0',
+  violet: '#ee82ee',
+  turquoise: '#40e0d0',
+  beige: '#f5f5dc',
+  indigo: '#4b0082',
+  tan: '#d2b48c',
+  aqua: '#00ffff',
+  lavender: '#e6e6fa',
 };
 
 /**

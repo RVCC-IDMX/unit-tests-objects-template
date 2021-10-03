@@ -9,8 +9,6 @@ const {
   getResistorOhms,
 } = require('../src/resistor');
 
-/* getColorValue */
-
 test('getColorValue', () => {
   expect(getColorValue('brown')).toBe(1);
   expect(getColorValue('green')).toBe(5);
@@ -25,8 +23,6 @@ test('getMultiplierValue', () => {
   expect(getMultiplierValue('silver')).toBe(0.01);
 });
 
-/* getThreeBandValue */
-
 test('getThreeBandValue', () => {
   const bands = {
     color1: 'brown',
@@ -34,7 +30,7 @@ test('getThreeBandValue', () => {
     multiplier: 'gold',
     tolerance: 'silver',
   };
-  expect(getThreeBandValue(bands)).toBe(0.1);
+  expect(getThreeBandValue(bands)).toBe(1);
   //
   bands.color1 = 'blue';
   bands.color2 = 'orange';
@@ -43,7 +39,7 @@ test('getThreeBandValue', () => {
   //
   bands.color1 = 'red';
   bands.color2 = 'green';
-  bands.multiplier = 'violet';
+  bands.multiplier = 'brown';
   expect(getThreeBandValue(bands)).toBe(250);
   //
   bands.color1 = 'grey';
@@ -57,8 +53,6 @@ test('getThreeBandValue', () => {
   expect(getThreeBandValue(bands)).toBe(24000000000);
 });
 
-/* formatNumber */
-
 test('formatNumber', () => {
   expect(formatNumber(75)).toBe('75');
   expect(formatNumber(8500)).toBe('8.5k');
@@ -67,8 +61,6 @@ test('formatNumber', () => {
   expect(formatNumber(88000000)).toBe('88M');
   expect(formatNumber(21000000000)).toBe('21G');
 });
-
-/* getTolerance */
 
 test('getTolerance', () => {
   expect(getTolerance('brown')).toBe('±1%');
@@ -80,8 +72,6 @@ test('getTolerance', () => {
   expect(getTolerance('gold')).toBe('±5%');
   expect(getTolerance('silver')).toBe('±10%');
 });
-
-/* getResistorOhms */
 
 test('getResistorOhms', () => {
   const bands = {
