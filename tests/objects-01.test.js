@@ -1,6 +1,7 @@
 const {
   makePetObject,
   getPetName,
+  getPetAge,
   setPetAge,
   isPetABaby,
   addPetBreed,
@@ -23,6 +24,11 @@ test('makePetObject', () => {
 test('getPetName', () => {
   const aPet = makePetObject();
   expect(getPetName(aPet)).toBe(aPet.name);
+});
+
+test('getPetAge', () => {
+  const aPet = makePetObject();
+  expect(getPetAge(aPet)).toBe(aPet.age);
 });
 
 test('setPetAge', () => {
