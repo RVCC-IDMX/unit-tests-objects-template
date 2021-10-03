@@ -70,7 +70,7 @@ function getOneEmployeeName(index) {
  * without hard-coding the return values, create an array
  * with a list of employee names from the response object
  * that is defined above this function
- * example: getEmployeeNames(response) // => ['Admin', 'Author', 'Visitor']
+ * example: getEmployeeNames() // => ['Admin', 'Author', 'Visitor']
  * must use the map() array method
  */
 function getEmployeeNames() {

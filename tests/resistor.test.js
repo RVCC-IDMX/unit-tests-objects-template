@@ -1,105 +1,112 @@
-/* eslint-disable no-undef */
 /* resistor.test.js */
 
 const {
   getColorValue,
-  getBandPairValue,
+  getMultiplierValue,
+  getThreeBandValue,
   formatNumber,
-  getValueWithMultiplier,
   getTolerance,
   getResistorOhms,
 } = require('../src/resistor');
 
 /* getColorValue */
 
-test('resistor color brown is 1', () => {
+test('getColorValue', () => {
   expect(getColorValue('brown')).toBe(1);
-});
-
-test('resistor color green is 5', () => {
   expect(getColorValue('green')).toBe(5);
 });
 
-/* getBandPairValue */
-
-test('band pair value of yellow/violet is 47', () => {
-  expect(getBandPairValue(['yellow', 'violet'])).toBe(47);
+test('getMultiplierValue', () => {
+  expect(getMultiplierValue('black')).toBe(1);
+  expect(getMultiplierValue('green')).toBe(100000);
+  expect(getMultiplierValue('blue')).toBe(1000000);
+  expect(getMultiplierValue('violet')).toBe(10000000);
+  expect(getMultiplierValue('gold')).toBe(0.1);
+  expect(getMultiplierValue('silver')).toBe(0.01);
 });
 
-test('band pair value of red/blue is 26', () => {
-  expect(getBandPairValue(['red', 'blue'])).toBe(26);
+/* getThreeBandValue */
+
+test('getThreeBandValue', () => {
+  const bands = {
+    color1: 'brown',
+    color2: 'black',
+    multiplier: 'gold',
+    tolerance: 'silver',
+  };
+  expect(getThreeBandValue(bands)).toBe(0.1);
+  //
+  bands.color1 = 'blue';
+  bands.color2 = 'orange';
+  bands.multiplier = 'silver';
+  expect(getThreeBandValue(bands)).toBe(0.63);
+  //
+  bands.color1 = 'red';
+  bands.color2 = 'green';
+  bands.multiplier = 'violet';
+  expect(getThreeBandValue(bands)).toBe(250);
+  //
+  bands.color1 = 'grey';
+  bands.color2 = 'white';
+  bands.multiplier = 'violet';
+  expect(getThreeBandValue(bands)).toBe(890000000);
+  //
+  bands.color1 = 'red';
+  bands.color2 = 'yellow';
+  bands.multiplier = 'white';
+  expect(getThreeBandValue(bands)).toBe(24000000000);
 });
 
 /* formatNumber */
 
-test('number 75 is 75', () => {
+test('formatNumber', () => {
   expect(formatNumber(75)).toBe('75');
-});
-
-test('number 8500 is 8.5k', () => {
   expect(formatNumber(8500)).toBe('8.5k');
-});
-
-test('number 470000 is 470k', () => {
-  expect(formatNumber(8500)).toBe('8.5k');
-});
-
-test('number 2100000 is 2.1M', () => {
+  expect(formatNumber(470000)).toBe('470k');
   expect(formatNumber(2100000)).toBe('2.1M');
-});
-
-test('number 88000000 is 88M', () => {
   expect(formatNumber(88000000)).toBe('88M');
-});
-
-test('number 21,000,000,000 is 21G', () => {
   expect(formatNumber(21000000000)).toBe('21G');
-});
-
-/* getValueWithMultiplier */
-
-test('38 with green multpler is 3800000', () => {
-  expect(getValueWithMultiplier(38, 'green')).toBe(3800000);
 });
 
 /* getTolerance */
 
-test('the color brown is ±1%', () => {
+test('getTolerance', () => {
   expect(getTolerance('brown')).toBe('±1%');
-});
-
-test('the color red is ±2%', () => {
   expect(getTolerance('red')).toBe('±2%');
-});
-
-test('the color green is ±0.5%', () => {
   expect(getTolerance('green')).toBe('±0.5%');
-});
-
-test('the color blue is ±0.25%', () => {
   expect(getTolerance('blue')).toBe('±0.25%');
-});
-
-test('the color violet is ±0.1%', () => {
   expect(getTolerance('violet')).toBe('±0.1%');
-});
-
-test('the color grey is ±0.05%', () => {
   expect(getTolerance('grey')).toBe('±0.05%');
-});
-
-test('the color gold is ±5%', () => {
   expect(getTolerance('gold')).toBe('±5%');
-});
-
-test('the color silver is ±10%', () => {
   expect(getTolerance('silver')).toBe('±10%');
 });
 
 /* getResistorOhms */
 
-test('the string includes 3.8M Ohms ±0.25%', () => {
-  const colorBands = ['orange', 'grey', 'green', 'blue'];
-  expect(getResistorOhms(colorBands))
-    .toBe('Resistor value: 3.8M Ohms ±0.25%');
+test('getResistorOhms', () => {
+  const bands = {
+    color1: 'orange',
+    color2: 'grey',
+    multiplier: 'green',
+    tolerance: 'blue',
+  };
+  expect(getResistorOhms(bands)).toBe('Resistor value: 3.8M Ohms ±0.25%');
+  //
+  bands.color1 = 'violet';
+  bands.color2 = 'brown';
+  bands.multiplier = 'black';
+  bands.tolerance = 'green';
+  expect(getResistorOhms(bands)).toBe('Resistor value: 71 Ohms ±0.5%');
+  //
+  bands.color1 = 'yellow';
+  bands.color2 = 'violet';
+  bands.multiplier = 'white';
+  bands.tolerance = 'red';
+  expect(getResistorOhms(bands)).toBe('Resistor value: 47G Ohms ±2%');
+  //
+  bands.color1 = 'grey';
+  bands.color2 = 'white';
+  bands.multiplier = 'violet';
+  bands.tolerance = 'gold';
+  expect(getResistorOhms(bands)).toBe('Resistor value: 890M Ohms ±5%');
 });

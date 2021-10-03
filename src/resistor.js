@@ -173,7 +173,7 @@ function getTolerance(color) {
  *   multiplier: 'red',
  *   tolerance: 'grey'
  * }
- *   => '5.6k Ohms ±0.05%'
+ *   => 'Resistor value: 5.6k Ohms ±0.05%'
  *
  * must use functions in this file to build the string using a template literal
  */
