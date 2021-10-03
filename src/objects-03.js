@@ -8,16 +8,19 @@
  */
 
 /**
- * Returns the volume of a cube
+ * Returns the volume of a cube to 2 decimal places
  * @param {object} box - an object with these given properties
  *  {
  *   length: {number},
  *   width: {number},
  *   height: {number},
  * }
- * @param {number} volume of a cube
+ * @return {number} - the volume of the cube
+ *
+ *
  *
  * example: getVolumeOfBox({length: 2, width: 3, height: 4}) // => 24
+ * example: getVolumeOfBox({length: 2.4, width: 3, height: 1.8}) // => 12.96
  */
 function getVolumeOfBox(box) {
   // write your code here & return value
