@@ -2,6 +2,7 @@ const {
   makePetObject,
   getPetName,
   setPetAge,
+  isPetABaby,
   addPetBreed,
   deletePetBestFriend,
   getPetKeys,
@@ -28,6 +29,14 @@ test('setPetAge', () => {
   const aPet = makePetObject();
   setPetAge(aPet, 5);
   expect(aPet.age).toBe(5);
+});
+
+test('isPetABaby', () => {
+  const aPet = makePetObject();
+  setPetAge(aPet, 5);
+  expect(isPetABaby(aPet)).toBe(false);
+  setPetAge(aPet, 0.5);
+  expect(isPetABaby(aPet)).toBe(true);
 });
 
 test('addPetBreed', () => {

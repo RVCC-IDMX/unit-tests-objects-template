@@ -4,24 +4,30 @@
  * Test: tests/objects-02.test.js
  * Path: src/objects-02.js
  *
+ * Simple Intro to Modules & Objects as Lookup Tables
+ *
+ * "Good modules are highly self-contained with distinct
+ * functionality, allowing them to be shuffled, removed, or added as
+ * necessary, without disrupting the system as a whole."
+ * https://bit.ly/3A2xvXC
+ *
  */
 
 /*
 ? Exporting and Importing
 ?
-? Notice the below object colorHexCodes is defined and assigned at
+? Notice the below object colorHexCodes is defined and assigned
 ? outside of any function. The scope of colorHexCodes is available
-? but limited only to the functions defined in this file.
+? (but limited only) to the functions defined in this file.
 ?
-? In JavaScript when you export something, that something can be used in
-? another file by importing it. This is called a module. Mostly we export
-? functions but objects could be exported as well.
+? In JavaScript modules when you export something, that something can be used in
+? another file by importing it. Mostly we export functions but objects can be exported as well.
 ?
 ? The colorHexCodes object isn't exported, so it is not available
-? outside of this file.
+? outside of this file. We are keeping our color table private to this file.
 ?
-? This helps protect it against collisions with other variables and
-? functions. It is also protected from accidental changes to the object.
+? Making an object private is a good way to keep your code clean and
+? protects the object's values from being overwritten by some other piece of code somewhere else.
 ?
 ? We are using CommonJS module pattern to export the colorHexCodes object.
 ? But the same idea can be applied to ES6 modules.
@@ -30,14 +36,13 @@
 */
 
 /*
-? An Object is a Lookup Table -https://bit.ly/3l9V8tb
+? An Object Can Be a Lookup Table -https://bit.ly/3l9V8tb
 ?
 ? Lookup tables are often used to map data to other data. They are much
 ? more efficient than using a switch statement or if/else statements.
 ?
-?
 ? This file is using the object as a lookup table to convert color names to
-? hex values.
+? hex values. (https://htmlcolorcodes.com/color-names/)
 */
 
 // eslint-disable-next-line no-unused-vars
@@ -87,7 +92,7 @@ function getColorValue(color) {
  *
  * example: testForColor('red') => true
  * example: testForColor('pink') => true
- * example: testForColor('chartreuse') => faLse // not in the table
+ * example: testForColor('chartreuse') => false // not in the table
  *
  * must use colorHexCodes as a lookup table
  * must use hasOwnProperty() to check if the color is in the table

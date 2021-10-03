@@ -4,12 +4,13 @@
  * Test: tests/objects-01.test.js
  * Path: src/objects-01.js
  *
+ * Reading and writing from objects
  */
 
 /**
  * Makes a new object with the given properties.
  * name: a string that is the name of the pet,
- * age: a number,
+ * age: a number (as in years) that is the age of the pet,
  * species: a string,
  * hasFur: a boolean,
  * legs: a number,
@@ -68,6 +69,15 @@ function setPetAge(pet, age) {
 }
 
 /**
+ * Returns whether the pet's is less than 1
+ * @param {object} pet  - the object as defined in makePetObject()
+ * @returns {boolean} - true if the pet's age is < 1 , false otherwise
+ */
+function isPetABaby(pet) {
+  // write your code here & return value
+}
+
+/**
  * Adds a new property to the pet object.
  * @param {object} pet - the  pet object as defined in makePetObject()
  * @param {string} str- a string indicating the breed of the pet
@@ -114,6 +124,7 @@ module.exports = {
   getNameFromPet,
   getAgeFromPet,
   setPetAge,
+  isPetABaby,
   addPetBreed,
   deletePetBestFriend,
   getPetKeys,
