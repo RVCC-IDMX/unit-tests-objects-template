@@ -46,7 +46,7 @@ If a test fails, jest will identify it as failing and print one or more error me
 
 One-by-one, edit each JavaScript file and follow the instructions for each function listed. When one file completely passes its tests, you are ready for the next file.
 
-Start with objects-01.test.js and finish with objects-07.test.js
+Start with objects-01.test.js and finish with resistor.test.js
 
 ---
 
