@@ -8,7 +8,8 @@
   Electrical engineers can read the colors and determine the resistance
   value in Ohms for any resistor because the color codes are standardized.
 
-  play with this resistor calculator for until you have an idea of how it works
+  Play with this resistor calculator until you have an idea of how it works. Your
+  code will mimic this calculator.
    http://bit.ly/2NjS274
 */
 
