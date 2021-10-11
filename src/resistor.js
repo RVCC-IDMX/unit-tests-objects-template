@@ -111,6 +111,8 @@ function getThreeBandValue(bands) {
  * Returns a string representation of the value with metric notation
  * @param {number} val - number representing the value of the resistor
  * @returns {string} - a string representation of the numeric value with metric notation
+ * example: 0.26       => 0.26
+ * example: 2.6        => 2.6
  * example: 26         => 26
  * example: 260        => 260
  * example: 2600       => 2.6k  // k = 1 thousand
