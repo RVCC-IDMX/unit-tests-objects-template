@@ -52,8 +52,14 @@ test('addPetBreed', () => {
 });
 
 test('deletePetBestFriend', () => {
+  // setup
   const aPet = makePetObject();
-  deletePetBestFriend(aPet);
+  const numberKeys = Object.keys(aPet).length;
+  // execute
+  const obj = deletePetBestFriend(aPet);
+  // verify
+  expect(typeof obj).toBe('object');
+  expect(Object.keys(obj)).toHaveLength(numberKeys - 1);
   expect(aPet.bestFriend).toBe(undefined);
 });
 
