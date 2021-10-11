@@ -105,6 +105,7 @@ function getColorValue(color) {
  *
  * book - https://bit.ly/3D5ojn5
  * Mozilla - https://mzl.la/3F6tk0F
+ * Or - https://mzl.la/3DnsESS 
  */
 function testForColor(color) {
   // write your code here & return value
